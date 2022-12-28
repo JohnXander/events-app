@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home({data}) {
@@ -21,52 +22,17 @@ export default function Home({data}) {
 
       <main className={styles.main}>
         {data.map(ev => (
-          <a href={`events/${ev.id}`}>
-            <img src={ev.image} />
+          <a key={ev.id} href={`events/${ev.id}`}>
+            <Image
+              src={ev.image}
+              alt={ev.title}
+              width={200}
+              height={100}
+            />
             <h2>{ev.title}</h2>
             <p>{ev.description}</p>
           </a>
         ))}
-
-        <a href='/events/london'>
-          <img src="" alt="" />
-          <h2>Events in London</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </a>
-        <a href='/events/sanfran'>
-          <img src="" alt="" />
-          <h2>Events in San Francisco</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </a>
-        <a href='/events/barcelona'>
-          <img src="" alt="" />
-          <h2>Events in Barcelona</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </a>
       </main>
 
       <footer className={styles.footer}>
