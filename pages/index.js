@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -11,8 +10,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
-        <nav>
+      <header className={styles.nav_container}>
+        <nav className={styles.nav}>
           <img src="" alt="" />
           <a href="/">Home</a>
           <a href="/events">Events</a>
