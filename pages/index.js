@@ -26,8 +26,8 @@ export default function Home({data}) {
             <Image
               src={ev.image}
               alt={ev.title}
-              width={200}
-              height={100}
+              width={300}
+              height={300}
             />
             <h2>{ev.title}</h2>
             <p>{ev.description}</p>
