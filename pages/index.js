@@ -25,7 +25,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        Footer
+        <p>© 2022 Events App</p>
       </footer>
     </div>
   )
