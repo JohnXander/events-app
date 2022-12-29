@@ -7,8 +7,8 @@ export const Header = () => {
             <div className="topNav">
                 <Image
                     src={'/images/logo.png'}
-                    width={50}
-                    height={50}
+                    width={40}
+                    height={40}
                     alt={'logo'}
                 />
                 <nav>
@@ -25,7 +25,7 @@ export const Header = () => {
                     </ul>
                 </nav>
             </div>
-            <h1>Bla Bla Bla</h1>
+            <h1>John Xander's Events App</h1>
       </header>
     )
 }
