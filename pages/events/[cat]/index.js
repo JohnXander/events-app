@@ -5,7 +5,7 @@ const EventsCatPage = ({data}) => {
         <div>
             <h1>Events in London</h1>
             {data.map(ev => (
-                <a key={ev.id} href={`events/${ev.city}/${ev.id}`}>
+                <a key={ev.id} href={`${ev.city}/${ev.id}`}>
                     <Image
                         src={ev.image}
                         alt={ev.title}
