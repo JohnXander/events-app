@@ -1,7 +1,6 @@
 import Image from 'next/image'
 
 const EventPage = ({ data }) => {
-    console.log(data)
     return (
         <div>
             <Image
