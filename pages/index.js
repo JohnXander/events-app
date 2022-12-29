@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Footer } from '../src/components/footer/footer'
+import { Header } from '../src/components/header/header'
 import { HomePage } from '../src/components/home/home-page'
 import styles from '../styles/Home.module.css'
 
@@ -13,20 +15,11 @@ export default function Home({data}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className={styles.nav_container}>
-        <nav className={styles.nav}>
-          <img src="" alt="" />
-          <Link href="/">Home</Link>
-          <Link href="/events">Events</Link>
-          <Link href="/about-us">About Us</Link>
-        </nav>
-      </header>
+      <Header />
 
       <HomePage data={data} />
 
-      <footer className={styles.footer}>
-        <p>© 2022 Events App</p>
-      </footer>
+      <Footer />
     </div>
   )
 }
