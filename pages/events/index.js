@@ -3,11 +3,14 @@ import Link from 'next/link'
 
 const EventsPage = ({data}) => {
     return (
-        <div>
-            <h1>sdkcbdhcsiub</h1>
+        <div className='events_page'>
+            <h1>Events Page</h1>
             <div>
                 {data.map(ev => (
-                    <Link key={ev.id} href={`events/${ev.id}`}>
+                    <Link
+                        className='card'
+                        key={ev.id}
+                        href={`events/${ev.id}`}>
                         <Image
                             src={ev.image}
                             alt={ev.title}
