@@ -12,7 +12,18 @@ const EventPage = ({ data }) => {
         const eventId = router?.query.id
 
         try {
-            
+            const response = await fetch('/api/email-registration', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email: emailValue, eventId })
+            })
+
+            if (!response.ok) throw new Error(`Error: ${response.status}`)
+            const data = await response.json()
+            console.log('POST', data)
+
         } catch (e) {
             console.log("Error", e)
         }
