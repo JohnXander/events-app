@@ -1,8 +1,13 @@
 import Image from 'next/image'
 
 const EventPage = ({ data }) => {
+    const submitEmail = (e) => {
+        e.preventDefault()
+        console.log('first')
+    }
+
     return (
-        <div>
+        <div className='event_single_page'>
             <Image
                 src={data.image}
                 width={1000}
@@ -11,8 +16,15 @@ const EventPage = ({ data }) => {
             />
             <h1>{data.title}</h1>
             <p>{data.description}</p>
-            <input type="email" />
-            <button type='submit'>Submit</button>
+            <form onSubmit={submitEmail} className="email_registration">
+                <label>Get registered for this event!</label>
+                <input
+                    type="email"
+                    id='email'
+                    placeholder='Your email...'
+                />
+                <button type='submit'>Submit</button>
+            </form>
         </div>
     )
 }
