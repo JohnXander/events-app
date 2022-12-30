@@ -11,6 +11,8 @@ const EventPage = ({ data }) => {
             />
             <h1>{data.title}</h1>
             <p>{data.description}</p>
+            <input type="email" />
+            <button type='submit'>Submit</button>
         </div>
     )
 }
