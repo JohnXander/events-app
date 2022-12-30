@@ -1,24 +1,38 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+import { useRef } from 'react'
 
 const EventPage = ({ data }) => {
-    const submitEmail = (e) => {
+    const inputEmail = useRef()
+    const router = useRouter()
+
+    const submitEmail = async (e) => {
         e.preventDefault()
-        console.log('first')
+        const emailValue = inputEmail.current.value
+        const eventId = router?.query.id
+
+        try {
+            
+        } catch (e) {
+            console.log("Error", e)
+        }
+
     }
 
     return (
         <div className='event_single_page'>
+            <h1>{data.title}</h1>
             <Image
                 src={data.image}
                 width={1000}
                 height={500}
                 alt={data.title}
             />
-            <h1>{data.title}</h1>
             <p>{data.description}</p>
             <form onSubmit={submitEmail} className="email_registration">
                 <label>Get registered for this event!</label>
                 <input
+                    ref={inputEmail}
                     type="email"
                     id='email'
                     placeholder='Your email...'
